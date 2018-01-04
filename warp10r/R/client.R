@@ -224,6 +224,8 @@ toGtsInputFormat <- function(dataFrame){
   res <- ''
   for (name in value) {
 
+    print(tsColumnName)
+    print(name)
     if (name == tsColumnName) {
       next
     }
@@ -251,11 +253,11 @@ toGtsInputFormat <- function(dataFrame){
       classname <- paste0(name, '{}')
     }
 
-    subDf <- dataFrame[sub]
+    subDf <- dataFrame[, sub, with = FALSE]
     first <- TRUE
 
     for (rowId in 1:nrow(subDf)) {
-      if (is.na(subDf[name][rowId,1])) {
+      if (is.na(subDf[,name,with=FALSE][rowId,1])) {
         next
       }
 
