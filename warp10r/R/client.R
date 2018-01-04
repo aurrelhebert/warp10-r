@@ -257,7 +257,7 @@ toGtsInputFormat <- function(dataFrame){
     first <- TRUE
 
     for (rowId in 1:nrow(subDf)) {
-      if (is.na(subDf[,name,with=FALSE][rowId,1])) {
+      if (is.na(subDf[, name, with = FALSE][rowId,1])) {
         next
       }
 
