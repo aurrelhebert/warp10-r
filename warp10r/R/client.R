@@ -224,8 +224,6 @@ toGtsInputFormat <- function(dataFrame){
   res <- ''
   for (name in value) {
 
-    print(tsColumnName)
-    print(name)
     if (name == tsColumnName) {
       next
     }
